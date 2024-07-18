@@ -19,15 +19,14 @@ Benefits of Deserialization :-
     Versioning and Upgrades
 
 
-The byte stream created is platform independent. So, the object serialized on one platform can be deserialized on a different platform. To make a Java object serializable we implement the java.io.Serializable interface. The ObjectOutputStream class contains writeObject() method for serializing an Object.
-
 Mechanism of Serialization and Deserialization
 
+Serialization:
+    To make an object of a class serializable, the class must implement the Serializable interface. This is a marker interface (it has no methods).
+    The ObjectOutputStream class is used to write the object to an output stream, which can be a file, network socket, etc.
+    Create  an ObjectOutputStream and pass it the object we want to serialize using the writeObject() method.
 
-    Serialization:
-        The object is converted into a byte stream.
-        The byte stream is written to a storage medium or transmitted over a network.
-
-    Deserialization:
-        The byte stream is read from the storage medium or received over the network.
-        The byte stream is converted back into the original object. 
+Deserialization:
+    The ObjectInputStream class is used to read the object from an input stream, like a file or network socket.
+    Create an ObjectInputStream and use the readObject() method to read the byte stream and convert it back into an object.
+    
